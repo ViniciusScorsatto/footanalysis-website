@@ -27,6 +27,9 @@ type AffiliateItem = FeatureItem & {
   href: string;
   cta: string;
   tag: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  format?: "feature" | "sidebar";
 };
 
 type CoverageItem = {
@@ -136,8 +139,7 @@ const enContent: LocaleContent = {
     switchLabel: "Portuguese",
     items: [
       { label: "Home", href: "/en" },
-      { label: "About", href: "/en/about" },
-      { label: "Advertise", href: "/en/advertise" }
+      { label: "About", href: "/en/about" }
     ]
   },
   hero: {
@@ -146,7 +148,7 @@ const enContent: LocaleContent = {
     description:
       "FootAnalysys translates football into sharp, watchable storytelling across YouTube, TikTok, and Instagram. The English channel is built for global reach, focused audience attention, and brand-safe football coverage.",
     primaryCta: "Explore sponsor opportunities",
-    primaryHref: "/en/advertise",
+    primaryHref: "mailto:footanalysisshorts@gmail.com",
     secondaryCta: "See our story",
     secondaryHref: "/en/about"
   },
@@ -159,21 +161,33 @@ const enContent: LocaleContent = {
   socials: [
     {
       label: "YouTube",
-      href: "https://youtube.com/@FootAnalysysEN",
-      handle: "@FootAnalysysEN",
+      href: "https://www.youtube.com/@FootAnalysisEN",
+      handle: "@FootAnalysisEN",
       blurb: "Long-form analysis, tactical explainers, and anchor content for brand storytelling."
     },
     {
       label: "TikTok",
-      href: "https://tiktok.com/@footanalysys_en",
-      handle: "@footanalysys_en",
+      href: "https://www.tiktok.com/@foot.analysis.en",
+      handle: "@foot.analysis.en",
       blurb: "Fast, high-retention football takes designed for reach, discovery, and repeat engagement."
     },
     {
       label: "Instagram",
-      href: "https://instagram.com/footanalysys_en",
-      handle: "@footanalysys_en",
+      href: "https://www.instagram.com/footanalysisen/",
+      handle: "@footanalysisen",
       blurb: "Visual football narratives, clips, and campaign-friendly social touchpoints."
+    },
+    {
+      label: "Reddit",
+      href: "https://www.reddit.com/r/FootballAnalysisEN/",
+      handle: "r/FootballAnalysisEN",
+      blurb: "Community discussion, discovery, and extra reach beyond the core short-form platforms."
+    },
+    {
+      label: "X",
+      href: "https://x.com/FootAnalysisIO",
+      handle: "@FootAnalysisIO",
+      blurb: "Fast updates, distribution, and shared brand presence across both language audiences."
     }
   ],
   coverage: {
@@ -219,21 +233,26 @@ const enContent: LocaleContent = {
         description: "Use this banner slot for an English-facing affiliate campaign tied to fixtures, picks, or weekly football traffic.",
         href: "#",
         cta: "Add affiliate link",
-        tag: "Banner 01"
+        tag: "Banner 01",
+        format: "feature",
+        imageSrc: "/fake-banner-en.png",
+        imageAlt: "English placeholder sponsor banner"
       },
       {
         title: "Evergreen football deal",
         description: "A persistent placement for betting, fantasy, apparel, or tool offers aimed at the international audience.",
         href: "#",
         cta: "Set destination",
-        tag: "Banner 02"
+        tag: "Banner 02",
+        format: "sidebar"
       },
       {
         title: "Partner campaign slot",
         description: "A cleaner commercial surface for brand-safe affiliate or co-promo campaigns without crowding the homepage.",
         href: "#",
         cta: "Update banner",
-        tag: "Banner 03"
+        tag: "Banner 03",
+        format: "sidebar"
       }
     ]
   },
@@ -341,7 +360,7 @@ const enContent: LocaleContent = {
     success: "Thanks. Your inquiry has been sent and we’ll be in touch soon.",
     error: "We could not send your inquiry right now. Please use the business email below."
   },
-  contactEmail: "business@footanalysys.com"
+  contactEmail: "footanalysisshorts@gmail.com"
 };
 
 const ptContent: LocaleContent = {
@@ -359,8 +378,7 @@ const ptContent: LocaleContent = {
     switchLabel: "English",
     items: [
       { label: "Inicio", href: "/pt" },
-      { label: "Sobre", href: "/pt/about" },
-      { label: "Anuncie", href: "/pt/advertise" }
+      { label: "Sobre", href: "/pt/about" }
     ]
   },
   hero: {
@@ -369,7 +387,7 @@ const ptContent: LocaleContent = {
     description:
       "A FootAnalysys transforma futebol em conteudo com leitura de jogo, narrativa e presenca visual. A operacao em portugues foi desenhada para falar com esse publico com voz propria e com espaco comercial separado.",
     primaryCta: "Ver oportunidades para marcas",
-    primaryHref: "/pt/advertise",
+    primaryHref: "mailto:footanalysisshorts@gmail.com",
     secondaryCta: "Conheca a marca",
     secondaryHref: "/pt/about"
   },
@@ -382,21 +400,33 @@ const ptContent: LocaleContent = {
   socials: [
     {
       label: "YouTube",
-      href: "https://youtube.com/@FootAnalysysPT",
-      handle: "@FootAnalysysPT",
+      href: "https://www.youtube.com/@FootAnalysisPT",
+      handle: "@FootAnalysisPT",
       blurb: "Analises, contextos e historias de futebol em formato ideal para profundidade e autoridade."
     },
     {
       label: "TikTok",
-      href: "https://tiktok.com/@footanalysys_pt",
-      handle: "@footanalysys_pt",
+      href: "https://www.tiktok.com/@foot.analysis.pt",
+      handle: "@foot.analysis.pt",
       blurb: "Conteudo curto com potencial de alcance, recorrencia e conversa rapida com o torcedor."
     },
     {
       label: "Instagram",
-      href: "https://instagram.com/footanalysys_pt",
-      handle: "@footanalysys_pt",
+      href: "https://www.instagram.com/footanalysispt/",
+      handle: "@footanalysispt",
       blurb: "Presenca visual para reforco de marca, recortes de conteudo e campanhas."
+    },
+    {
+      label: "Reddit",
+      href: "https://www.reddit.com/r/FootAnalysisPT/",
+      handle: "r/FootAnalysisPT",
+      blurb: "Espaco para comunidade, discussao e descoberta de conteudo fora das plataformas tradicionais."
+    },
+    {
+      label: "X",
+      href: "https://x.com/FootAnalysisIO",
+      handle: "@FootAnalysisIO",
+      blurb: "Atualizacoes rapidas, distribuicao de conteudo e presenca compartilhada da marca."
     }
   ],
   coverage: {
@@ -468,23 +498,30 @@ const ptContent: LocaleContent = {
       {
         title: "Oferta da rodada",
         description: "Use este espaco para uma campanha afiliada em portugues ligada a rodada, palpites ou calendario do momento.",
-        href: "#",
-        cta: "Adicionar link afiliado",
-        tag: "Banner 01"
+        href: "https://s.afilio.com.br/?id=6a163216a7bd2a0001996fce",
+        cta: "Abrir oferta",
+        tag: "Banner 01",
+        format: "feature",
+        imageSrc: "https://s.afilio.com.br/?id=6a163216a7bd2a0001996fcf",
+        imageAlt: "Banner afiliado em portugues"
       },
       {
         title: "Oferta evergreen de futebol",
         description: "Um banner fixo para apostas, fantasy, camisa, app ou qualquer oferta com aderencia ao publico do canal.",
-        href: "#",
-        cta: "Definir destino",
-        tag: "Banner 02"
+        href: "https://s.afilio.com.br/?id=6a1638dbf7aeb20001e8bf82",
+        cta: "Abrir oferta",
+        tag: "Banner 02",
+        format: "sidebar",
+        imageSrc: "https://s.afilio.com.br/?id=6a1638dbf7aeb20001e8bf83",
+        imageAlt: "Banner lateral afiliado em portugues"
       },
       {
         title: "Campanha de parceiro",
         description: "Um bloco comercial mais limpo para divulgacao afiliada ou co-promocao sem poluir o resto da home.",
         href: "#",
         cta: "Atualizar banner",
-        tag: "Banner 03"
+        tag: "Banner 03",
+        format: "sidebar"
       }
     ]
   },
@@ -592,7 +629,7 @@ const ptContent: LocaleContent = {
     success: "Obrigado. Seu contato foi enviado e responderemos em breve.",
     error: "Nao foi possivel enviar agora. Use o email comercial abaixo."
   },
-  contactEmail: "business@footanalysys.com"
+  contactEmail: "footanalysisshorts@gmail.com"
 };
 
 export const localeContent: Record<Locale, LocaleContent> = {

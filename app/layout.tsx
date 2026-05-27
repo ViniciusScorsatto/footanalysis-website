@@ -5,7 +5,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "FootAnalysys",
-  description: "Bilingual football media brand website."
+  description: "Bilingual football media brand website.",
+  icons: {
+    icon: "/icon.png"
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
