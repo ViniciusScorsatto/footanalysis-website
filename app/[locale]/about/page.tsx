@@ -1,13 +1,59 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container";
 import { FeatureGrid } from "@/components/feature-grid";
 import { SectionHeading } from "@/components/section-heading";
 import { getLocaleContent, isLocale } from "@/lib/site-content";
+import { getSiteUrl } from "@/lib/site-url";
 
 type AboutPageProps = {
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    return {};
+  }
+
+  const content = getLocaleContent(locale);
+  const siteUrl = getSiteUrl();
+  const canonicalUrl = `${siteUrl}/${locale}/about`;
+  const title =
+    locale === "en" ? "About FootAnalysis | Football Media Brand" : "Sobre a FootAnalysis | Midia de Futebol";
+  const description = content.about.hero.description;
+  const ogImage = locale === "pt" ? `${siteUrl}/hero-bg-brazil.png` : `${siteUrl}/hero-bg-international.png`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${siteUrl}/en/about`,
+        pt: `${siteUrl}/pt/about`,
+        "x-default": `${siteUrl}/pt/about`
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: "FootAnalysis",
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1980,
+          height: 1024,
+          alt: title
+        }
+      ]
+    }
+  };
+}
 
 export default async function AboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
