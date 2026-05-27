@@ -128,9 +128,9 @@ const enContent: LocaleContent = {
   locale: "en",
   languageName: "English",
   metadata: {
-    title: "FootAnalysys | Football Media for Fans and Brands",
+    title: "FootAnalysis | Football Media for Fans and Brands",
     description:
-      "FootAnalysys is a bilingual football media brand delivering premium analysis, creator-led storytelling, and sponsor-ready audience reach."
+      "FootAnalysis is a bilingual football media brand delivering premium analysis, creator-led storytelling, and sponsor-ready audience reach."
   },
   nav: {
     home: "Home",
@@ -146,7 +146,7 @@ const enContent: LocaleContent = {
     eyebrow: "Football analysis with editorial depth",
     title: "A serious football media brand built for modern fans and ambitious partners.",
     description:
-      "FootAnalysys translates football into sharp, watchable storytelling across YouTube, TikTok, and Instagram. The English channel is built for global reach, focused audience attention, and brand-safe football coverage.",
+      "FootAnalysis translates football into sharp, watchable storytelling across YouTube, TikTok, and Instagram. The English channel is built for global reach, focused audience attention, and brand-safe football coverage.",
     primaryCta: "Explore sponsor opportunities",
     primaryHref: "mailto:footanalysisshorts@gmail.com",
     secondaryCta: "See our story",
@@ -258,7 +258,7 @@ const enContent: LocaleContent = {
   },
   sponsorReasons: {
     heading: {
-      eyebrow: "Why FootAnalysys",
+      eyebrow: "Why FootAnalysis",
       title: "Built to feel closer to a football publication than a casual creator page.",
       description:
         "We combine creator agility with editorial presentation so brands get cultural relevance without sacrificing professionalism."
@@ -281,12 +281,12 @@ const enContent: LocaleContent = {
   about: {
     hero: {
       eyebrow: "About the brand",
-      title: "FootAnalysys turns football knowledge into compelling media.",
+      title: "FootAnalysis turns football knowledge into compelling media.",
       description:
         "The project was built to treat football content with structure, taste, and analysis-first credibility."
     },
     story: [
-      "FootAnalysys was created around the idea that football content can be both accessible and intelligent. The brand focuses on making tactical, cultural, and narrative angles feel clear without losing depth.",
+      "FootAnalysis was created around the idea that football content can be both accessible and intelligent. The brand focuses on making tactical, cultural, and narrative angles feel clear without losing depth.",
       "The bilingual setup allows the same standard of editorial quality to reach different audiences with their own voice, partnerships, and monetization strategy."
     ],
     principles: [
@@ -346,7 +346,7 @@ const enContent: LocaleContent = {
   footer: {
     statement: "Football storytelling with clarity, credibility, and commercial intent.",
     contactLabel: "Sponsor contact",
-    copyright: "FootAnalysys"
+    copyright: "FootAnalysis"
   },
   form: {
     name: "Name",
@@ -367,9 +367,9 @@ const ptContent: LocaleContent = {
   locale: "pt",
   languageName: "Português",
   metadata: {
-    title: "FootAnalysys | Midia de Futebol para Publico e Marcas",
+    title: "FootAnalysis | Midia de Futebol para Publico e Marcas",
     description:
-      "FootAnalysys e uma marca bilingue de midia de futebol com analise, narrativa premium e espaco profissional para patrocinadores."
+      "FootAnalysis e uma marca bilingue de midia de futebol com analise, narrativa premium e espaco profissional para patrocinadores."
   },
   nav: {
     home: "Inicio",
@@ -385,7 +385,7 @@ const ptContent: LocaleContent = {
     eyebrow: "Analise editorial para quem vive futebol",
     title: "Um projeto de futebol com identidade forte, contexto e cara de marca seria.",
     description:
-      "A FootAnalysys transforma futebol em conteudo com leitura de jogo, narrativa e presenca visual. A operacao em portugues foi desenhada para falar com esse publico com voz propria e com espaco comercial separado.",
+      "A FootAnalysis transforma futebol em conteudo com leitura de jogo, narrativa e presenca visual. A operacao em portugues foi desenhada para falar com esse publico com voz propria e com espaco comercial separado.",
     primaryCta: "Ver oportunidades para marcas",
     primaryHref: "mailto:footanalysisshorts@gmail.com",
     secondaryCta: "Conheca a marca",
@@ -527,7 +527,7 @@ const ptContent: LocaleContent = {
   },
   sponsorReasons: {
     heading: {
-      eyebrow: "Por que a FootAnalysys",
+      eyebrow: "Por que a FootAnalysis",
       title: "Uma presenca que parece mais uma marca editorial do que uma pagina improvisada.",
       description:
         "A combinacao de analise, identidade visual e consistencia multiplataforma ajuda a dar confianca para audiencia e anunciantes."
@@ -550,12 +550,12 @@ const ptContent: LocaleContent = {
   about: {
     hero: {
       eyebrow: "Sobre a marca",
-      title: "A FootAnalysys transforma conhecimento de futebol em uma experiencia de midia.",
+      title: "A FootAnalysis transforma conhecimento de futebol em uma experiencia de midia.",
       description:
         "O projeto nasceu para tratar conteudo de futebol com estrutura, gosto e credibilidade analitica."
     },
     story: [
-      "A FootAnalysys foi criada com a ideia de que conteudo de futebol pode ser acessivel sem perder inteligencia. A marca busca tornar mais claros os angulos taticos, culturais e narrativos do jogo.",
+      "A FootAnalysis foi criada com a ideia de que conteudo de futebol pode ser acessivel sem perder inteligencia. A marca busca tornar mais claros os angulos taticos, culturais e narrativos do jogo.",
       "A estrutura bilingue permite manter o mesmo padrao editorial ao mesmo tempo em que adapta voz, patrocinio e monetizacao para cada audiencia."
     ],
     principles: [
@@ -615,7 +615,7 @@ const ptContent: LocaleContent = {
   footer: {
     statement: "Narrativa de futebol com clareza, credibilidade e intencao comercial.",
     contactLabel: "Contato para marcas",
-    copyright: "FootAnalysys"
+    copyright: "FootAnalysis"
   },
   form: {
     name: "Nome",

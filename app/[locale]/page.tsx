@@ -92,7 +92,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         locale={locale}
         pageCopy={{
           floatingSubtitle: isPortuguese ? "Shorts de futebol" : "Football shorts",
-          floatingTitle: youtubeStats?.channelTitle || "FootAnalysys",
+          floatingTitle: youtubeStats?.channelTitle || "FootAnalysis",
           heroDescription: pageCopy.heroDescription,
           heroTitle: pageCopy.heroTitle,
           primaryCta: pageCopy.heroPrimary

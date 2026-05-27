@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "FootAnalysys",
+  title: "FootAnalysis",
   description: "Bilingual football media brand website.",
   icons: {
     icon: "/icon.png"

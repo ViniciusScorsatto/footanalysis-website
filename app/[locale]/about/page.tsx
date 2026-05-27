@@ -45,8 +45,8 @@ export default async function AboutPage({ params }: AboutPageProps) {
               </p>
               <p className="mt-6 text-base leading-7 text-white/70">
                 {locale === "en"
-                  ? "The site reinforces that FootAnalysys is not just another profile page. It is a media property designed to grow with better campaigns, better storytelling, and stronger commercial clarity."
-                  : "O site reforca que a FootAnalysys nao e apenas mais um perfil. E uma propriedade de midia pensada para crescer com campanhas melhores, narrativa mais forte e mais clareza comercial."}
+                  ? "The site reinforces that FootAnalysis is not just another profile page. It is a media property designed to grow with better campaigns, better storytelling, and stronger commercial clarity."
+                  : "O site reforca que a FootAnalysis nao e apenas mais um perfil. E uma propriedade de midia pensada para crescer com campanhas melhores, narrativa mais forte e mais clareza comercial."}
               </p>
             </div>
 

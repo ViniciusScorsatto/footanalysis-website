@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: LocaleLayoutProps): Promise<M
       title: content.metadata.title,
       description: content.metadata.description,
       url: `https://footanalysys.com/${content.locale}`,
-      siteName: "FootAnalysys",
+      siteName: "FootAnalysis",
       locale: content.locale === "en" ? "en_US" : "pt_BR",
       type: "website"
     }
