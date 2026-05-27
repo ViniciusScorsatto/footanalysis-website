@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, AtSign, Instagram, MessageCircle, Music2, Play, Youtube } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
+import posthog from "posthog-js";
 
 import { Container } from "@/components/container";
 
@@ -138,6 +139,13 @@ export function HomeHero({
                 <Link
                   href={`mailto:${contactEmail}`}
                   className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition ${palette.button}`}
+                  onClick={() => {
+                    posthog.capture("sponsor_cta_clicked", {
+                      locale,
+                      location: "hero",
+                      cta_text: pageCopy.primaryCta,
+                    });
+                  }}
                 >
                   {pageCopy.primaryCta}
                   <ArrowRight className="h-4 w-4" />
@@ -165,6 +173,13 @@ export function HomeHero({
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/5 text-white/88 transition hover:border-white/30 hover:bg-white/10"
+                        onClick={() => {
+                          posthog.capture("social_link_clicked", {
+                            locale,
+                            platform: social.label,
+                            href: social.href,
+                          });
+                        }}
                       >
                         <SocialIcon className="h-5 w-5" />
                       </Link>

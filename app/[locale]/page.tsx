@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
+import { AffiliateLink } from "@/components/affiliate-link";
 import { Container } from "@/components/container";
 import { HomeHero } from "@/components/home-hero";
+import { TrackedSponsorLink } from "@/components/tracked-sponsor-link";
 import { getLocaleContent, isLocale } from "@/lib/site-content";
 import { getYouTubeStats } from "@/lib/youtube-stats";
 
@@ -120,8 +120,11 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
               ))}
 
               {sidebarPreviewAffiliate ? (
-                <Link
+                <AffiliateLink
                   href={sidebarPreviewAffiliate.href}
+                  title={sidebarPreviewAffiliate.title}
+                  tag={sidebarPreviewAffiliate.tag}
+                  locale={locale}
                   target={sidebarPreviewAffiliate.href.startsWith("http") ? "_blank" : undefined}
                   rel={sidebarPreviewAffiliate.href.startsWith("http") ? "noreferrer" : undefined}
                   className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] transition hover:-translate-y-1"
@@ -133,7 +136,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
                       className="h-full w-full object-contain object-center"
                     />
                   </div>
-                </Link>
+                </AffiliateLink>
               ) : null}
             </div>
           </div>
@@ -145,8 +148,11 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
           <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(8,10,13,0.94)_0%,rgba(10,14,19,0.92)_100%)] px-6 py-7 md:px-8">
             <div className="mx-auto max-w-4xl">
               {featuredAffiliate ? (
-                <Link
+                <AffiliateLink
                   href={featuredAffiliate.href}
+                  title={featuredAffiliate.title}
+                  tag={featuredAffiliate.tag}
+                  locale={locale}
                   target={featuredAffiliate.href.startsWith("http") ? "_blank" : undefined}
                   rel={featuredAffiliate.href.startsWith("http") ? "noreferrer" : undefined}
                   className="group block overflow-hidden rounded-[1.45rem] border border-[#b9ff19]/30 bg-[linear-gradient(135deg,rgba(185,255,25,0.16)_0%,rgba(255,255,255,0.02)_55%,rgba(255,255,255,0.02)_100%)] p-5 transition hover:-translate-y-1"
@@ -162,7 +168,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
                       />
                     </div>
                   ) : null}
-                </Link>
+                </AffiliateLink>
               ) : null}
             </div>
           </div>
@@ -177,13 +183,12 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
                 <h2 className="max-w-3xl text-4xl font-semibold leading-tight text-white md:text-5xl">{pageCopy.contactTitle}</h2>
               </div>
               <div className="flex flex-col gap-4 xl:items-end">
-                <Link
+                <TrackedSponsorLink
                   href={`mailto:${content.contactEmail}`}
+                  locale={locale}
+                  ctaText={pageCopy.heroPrimary}
                   className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition ${palette.button}`}
-                >
-                  {pageCopy.heroPrimary}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                />
               </div>
             </div>
           </div>

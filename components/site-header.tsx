@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import type { LocaleContent } from "@/lib/site-content";
 import { Container } from "@/components/container";
+import { LanguageSwitchLink } from "@/components/language-switch-link";
 
 type SiteHeaderProps = {
   content: LocaleContent;
@@ -28,12 +29,12 @@ export function SiteHeader({ content, switchHref }: SiteHeaderProps) {
           </Link>
 
           <nav className="flex flex-wrap items-center gap-3 md:gap-6">
-            <Link
+            <LanguageSwitchLink
               href={switchHref}
+              label={content.nav.switchLabel}
+              fromLocale={content.locale}
               className="rounded-full border border-white/12 px-4 py-2 text-sm text-mist transition hover:border-accent/60 hover:text-accent"
-            >
-              {content.nav.switchLabel}
-            </Link>
+            />
             <Link
               href={`mailto:${content.contactEmail}`}
               className="inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-ink transition hover:bg-[#efffae]"
