@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { DeferredImage } from "@/components/deferred-image";
 
 import { Container } from "@/components/container";
 import { HomeHero } from "@/components/home-hero";
@@ -104,8 +105,14 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {sampleImages.map((image) => (
                 <article key={image.src} className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03]">
-                  <div className="aspect-[9/16] bg-[#0b0d12]">
-                    <img src={image.src} alt={image.alt} className="h-full w-full object-cover object-top" />
+                  <div className="relative aspect-[9/16] bg-[#0b0d12]">
+                    <DeferredImage
+                      src={image.src.replace("/video-", "/optimized/video-").replace(".png", ".webp")}
+                      alt={image.alt}
+                      sizes="(min-width: 1280px) calc((100vw - 176px) / 4), (min-width: 1024px) calc((100vw - 112px) / 2), (min-width: 768px) calc((100vw - 80px) / 2), (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"
+                      quality={85}
+                      className="object-cover object-top"
+                    />
                   </div>
                 </article>
               ))}
@@ -119,8 +126,8 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
           <Container>
             <div className="overflow-hidden rounded-[1.8rem] border border-[#d7ff64]/25 bg-[#d7ff64]/[0.05] p-4 md:p-5">
               <div className="grid items-center gap-5 lg:grid-cols-[1.35fr_0.65fr]">
-                <div className="overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/30">
-                  <img src="/fake-banner-en.png" alt="Espaço para marca parceira" className="h-auto w-full object-cover" />
+                <div className="relative aspect-[1983/793] overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/30">
+                  <DeferredImage src="/optimized/fake-banner-en.webp" alt="Espaço para marca parceira" sizes="(min-width: 1024px) 65vw, 100vw" className="object-cover" />
                 </div>
                 <div className="px-2 py-2 lg:px-4">
                   <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#d7ff64]">Espaço para parceiros</p>

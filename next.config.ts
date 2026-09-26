@@ -3,6 +3,9 @@ import path from "node:path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  images: {
+    qualities: [75, 85],
+  },
   outputFileTracingRoot: path.resolve(process.cwd()),
   async rewrites() {
     return [

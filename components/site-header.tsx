@@ -19,7 +19,7 @@ export function SiteHeader({ content, switchHref }: SiteHeaderProps) {
           <Link href={`/${content.locale}`} className="flex items-center gap-3">
             <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-white/10 bg-[#1eaf30] shadow-[0_10px_30px_rgba(0,0,0,0.28)] md:h-16 md:w-16">
               <Image
-                src="/footanalysis-logo.png"
+                src="/optimized/footanalysis-logo.webp"
                 alt="Foot Analysis logo"
                 fill
                 sizes="64px"

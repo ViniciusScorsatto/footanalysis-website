@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, AtSign, Instagram, MessageCircle, Music2, Play, Youtube } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import posthog from "posthog-js";
@@ -75,19 +76,23 @@ export function HomeHero({
   const heroTitleLines = pageCopy.heroTitle.split("\n");
   const accentLine = heroTitleLines.at(-1);
   const baseLines = heroTitleLines.slice(0, -1);
-  const heroBackgroundImage = isPortuguese ? "/hero-bg-brazil.png" : "/hero-bg-international.png";
+  const heroBackgroundImage = isPortuguese ? "/optimized/hero-bg-brazil.webp" : "/optimized/hero-bg-international.webp";
   const showcaseImages = isPortuguese
-    ? ["/video-example-1.png", "/video-example-pt-4.png", "/video-example-3.png", "/video-example-4.png"]
-    : ["/video-example-en-1.png", "/video-example-en-2.png", "/video-example-en-3.png", "/video-example-en-4.png"];
+    ? ["/optimized/video-example-1.webp", "/optimized/video-example-pt-4.webp", "/optimized/video-example-3.webp", "/optimized/video-example-4.webp"]
+    : ["/optimized/video-example-en-1.webp", "/optimized/video-example-en-2.webp", "/optimized/video-example-en-3.webp", "/optimized/video-example-en-4.webp"];
 
   return (
     <section className="pt-6 md:pt-8">
       <Container>
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#050608] px-6 py-8 shadow-[0_30px_80px_rgba(0,0,0,0.4)] md:px-10 md:py-10 xl:px-12 xl:py-12">
           {heroBackgroundImage ? (
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+            <Image
+              src={heroBackgroundImage}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
             />
           ) : null}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(215,255,100,0.14),transparent_22%),radial-gradient(circle_at_center_left,rgba(255,255,255,0.08),transparent_28%),linear-gradient(180deg,rgba(4,5,8,0.24),rgba(0,0,0,0.42))]" />
@@ -199,32 +204,32 @@ export function HomeHero({
                 className="absolute left-[6%] top-[18%] h-44 w-36 rotate-[-9deg] overflow-hidden rounded-[1.5rem] border border-white/16 shadow-2xl md:h-52 md:w-40"
                 animate={reduceMotion ? { opacity: 1 } : { y: [0, -8, 0], rotate: [-9, -7.8, -9] }}
                 transition={reduceMotion ? undefined : { duration: 6.8, repeat: Infinity, ease: "easeInOut" }}
-                style={{ backgroundImage: `url(${showcaseImages[0]})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
+                <Image src={showcaseImages[0]} alt="" fill sizes="160px" loading="lazy" className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1),rgba(0,0,0,0.72))]" />
               </motion.div>
               <motion.div
                 className="absolute right-[5%] top-[12%] h-40 w-32 rotate-[8deg] overflow-hidden rounded-[1.45rem] border border-white/16 shadow-2xl md:h-48 md:w-36"
                 animate={reduceMotion ? { opacity: 1 } : { y: [0, -10, 0], rotate: [8, 9.2, 8] }}
                 transition={reduceMotion ? undefined : { duration: 7.4, repeat: Infinity, ease: "easeInOut" }}
-                style={{ backgroundImage: `url(${showcaseImages[1]})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
+                <Image src={showcaseImages[1]} alt="" fill sizes="144px" loading="lazy" className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.7))]" />
               </motion.div>
               <motion.div
                 className="absolute left-[9%] bottom-[14%] h-44 w-34 rotate-[7deg] overflow-hidden rounded-[1.45rem] border border-white/16 shadow-2xl md:h-48 md:w-36"
                 animate={reduceMotion ? { opacity: 1 } : { y: [0, -7, 0], rotate: [7, 8, 7] }}
                 transition={reduceMotion ? undefined : { duration: 6.2, repeat: Infinity, ease: "easeInOut" }}
-                style={{ backgroundImage: `url(${showcaseImages[2]})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
+                <Image src={showcaseImages[2]} alt="" fill sizes="144px" loading="lazy" className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.74))]" />
               </motion.div>
               <motion.div
                 className="absolute right-[7%] bottom-[18%] h-44 w-34 rotate-[-8deg] overflow-hidden rounded-[1.45rem] border border-white/16 shadow-2xl md:h-48 md:w-36"
                 animate={reduceMotion ? { opacity: 1 } : { y: [0, -9, 0], rotate: [-8, -6.8, -8] }}
                 transition={reduceMotion ? undefined : { duration: 7.1, repeat: Infinity, ease: "easeInOut" }}
-                style={{ backgroundImage: `url(${showcaseImages[3]})`, backgroundSize: "cover", backgroundPosition: "center" }}
               >
+                <Image src={showcaseImages[3]} alt="" fill sizes="144px" loading="lazy" className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.74))]" />
               </motion.div>
 
@@ -241,8 +246,8 @@ export function HomeHero({
                       <div
                         key={`${image}-${index}`}
                         className="relative overflow-hidden rounded-[0.95rem] border border-white/10"
-                        style={{ backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                       >
+                        <Image src={image} alt="" fill sizes="80px" loading="lazy" className="object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.68))]" />
                         <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1 text-[0.58rem] font-semibold text-white">
                           <Play className="h-2.5 w-2.5 fill-white text-white" />
@@ -254,8 +259,8 @@ export function HomeHero({
                       <div
                         key={`${image}-dup-${index}`}
                         className="relative overflow-hidden rounded-[0.95rem] border border-white/10"
-                        style={{ backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                       >
+                        <Image src={image} alt="" fill sizes="80px" loading="lazy" className="object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.68))]" />
                         <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1 text-[0.58rem] font-semibold text-white">
                           <Play className="h-2.5 w-2.5 fill-white text-white" />
@@ -267,8 +272,8 @@ export function HomeHero({
                       <div
                         key={`${image}-final-${index}`}
                         className="relative overflow-hidden rounded-[0.95rem] border border-white/10"
-                        style={{ backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center" }}
                       >
+                        <Image src={image} alt="" fill sizes="80px" loading="lazy" className="object-cover" />
                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.68))]" />
                         <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1 text-[0.58rem] font-semibold text-white">
                           <Play className="h-2.5 w-2.5 fill-white text-white" />
