@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 
-import { AffiliateLink } from "@/components/affiliate-link";
 import { Container } from "@/components/container";
 import { HomeHero } from "@/components/home-hero";
 import { TrackedSponsorLink } from "@/components/tracked-sponsor-link";
@@ -39,8 +38,6 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
 
   const pageCopy = isPortuguese
     ? {
-        affiliateHint: "Troque os links quando os afiliados estiverem prontos.",
-        affiliateTitle: "Banners afiliados para publico em portugues.",
         contactTitle: "Se quiser anunciar ou fechar parceria, a conversa começa aqui.",
         coverageDescription:
           "Tabelas, ritmo de campeao, classificacoes, wrap-ups, comparativos e leituras rapidas dos campeonatos que mais movimentam o publico.",
@@ -52,8 +49,6 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         sampleEyebrow: "Preview do conteudo"
       }
     : {
-        affiliateHint: "Replace the links once your affiliate campaigns are ready.",
-        affiliateTitle: "Affiliate banners for the English audience.",
         contactTitle: "If you want to sponsor or partner, this is where the conversation starts.",
         coverageDescription:
           "Tables, title pace, standings, season wrap-ups, comparisons, and fast football breakdowns built for short-form attention.",
@@ -78,10 +73,6 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         { src: "/video-example-en-3.png", alt: "Serie A season wrap-up" },
         { src: "/video-example-en-4.png", alt: "Bundesliga season wrap-up" }
       ];
-
-  const sidebarPreviewAffiliate = content.affiliates.items.find((item) => item.format === "sidebar" && item.imageSrc);
-  const homepageAffiliates = content.affiliates.items.filter((item) => item !== sidebarPreviewAffiliate);
-  const featuredAffiliate = homepageAffiliates.find((item) => item.format === "feature");
 
   return (
     <div className="pb-12">
@@ -110,7 +101,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
               <p className="mt-4 text-base leading-8 text-white/64">{pageCopy.coverageDescription}</p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {sampleImages.map((image) => (
                 <article key={image.src} className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03]">
                   <div className="aspect-[9/16] bg-[#0b0d12]">
@@ -118,62 +109,35 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
                   </div>
                 </article>
               ))}
-
-              {sidebarPreviewAffiliate ? (
-                <AffiliateLink
-                  href={sidebarPreviewAffiliate.href}
-                  title={sidebarPreviewAffiliate.title}
-                  tag={sidebarPreviewAffiliate.tag}
-                  locale={locale}
-                  target={sidebarPreviewAffiliate.href.startsWith("http") ? "_blank" : undefined}
-                  rel={sidebarPreviewAffiliate.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] transition hover:-translate-y-1"
-                >
-                  <div className="aspect-[9/16] bg-[#0b0d12]">
-                    <img
-                      src={sidebarPreviewAffiliate.imageSrc}
-                      alt={sidebarPreviewAffiliate.imageAlt ?? sidebarPreviewAffiliate.title}
-                      className="h-full w-full object-contain object-center"
-                    />
-                  </div>
-                </AffiliateLink>
-              ) : null}
             </div>
           </div>
         </Container>
       </section>
 
-      <section id="affiliates" className="pt-10">
-        <Container>
-          <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(8,10,13,0.94)_0%,rgba(10,14,19,0.92)_100%)] px-6 py-7 md:px-8">
-            <div className="mx-auto max-w-4xl">
-              {featuredAffiliate ? (
-                <AffiliateLink
-                  href={featuredAffiliate.href}
-                  title={featuredAffiliate.title}
-                  tag={featuredAffiliate.tag}
-                  locale={locale}
-                  target={featuredAffiliate.href.startsWith("http") ? "_blank" : undefined}
-                  rel={featuredAffiliate.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group block overflow-hidden rounded-[1.45rem] border border-[#b9ff19]/30 bg-[linear-gradient(135deg,rgba(185,255,25,0.16)_0%,rgba(255,255,255,0.02)_55%,rgba(255,255,255,0.02)_100%)] p-5 transition hover:-translate-y-1"
-                >
-                  {featuredAffiliate.imageSrc ? (
-                    <div
-                      className="overflow-hidden rounded-[1rem] border border-white/10 bg-black/20"
-                    >
-                      <img
-                        src={featuredAffiliate.imageSrc}
-                        alt={featuredAffiliate.imageAlt ?? featuredAffiliate.title}
-                        className="h-auto w-full object-contain object-center"
-                      />
-                    </div>
-                  ) : null}
-                </AffiliateLink>
-              ) : null}
+      {isPortuguese ? (
+        <section id="partner-banner" className="pt-10">
+          <Container>
+            <div className="overflow-hidden rounded-[1.8rem] border border-[#d7ff64]/25 bg-[#d7ff64]/[0.05] p-4 md:p-5">
+              <div className="grid items-center gap-5 lg:grid-cols-[1.35fr_0.65fr]">
+                <div className="overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/30">
+                  <img src="/fake-banner-en.png" alt="Espaço para marca parceira" className="h-auto w-full object-cover" />
+                </div>
+                <div className="px-2 py-2 lg:px-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#d7ff64]">Espaço para parceiros</p>
+                  <h2 className="mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl">Sua marca de roupas pode aparecer aqui.</h2>
+                  <p className="mt-4 text-sm leading-7 text-white/60">Fale com a FootAnalysis para criar uma parceria com o público que vive futebol.</p>
+                  <TrackedSponsorLink
+                    href="mailto:footanalysisshorts@gmail.com"
+                    locale={locale}
+                    ctaText="Seja um parceiro"
+                    className="mt-6 inline-flex items-center rounded-xl bg-[#d7ff64] px-5 py-3 text-sm font-bold text-[#0b0d12] transition hover:bg-[#efffae]"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      ) : null}
 
       <section id="contact" className="pt-10">
         <Container>

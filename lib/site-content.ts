@@ -23,15 +23,6 @@ type FeatureItem = {
   description: string;
 };
 
-type AffiliateItem = FeatureItem & {
-  href: string;
-  cta: string;
-  tag: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  format?: "feature" | "sidebar";
-};
-
 type CoverageItem = {
   name: string;
   tag: string;
@@ -78,10 +69,6 @@ export type LocaleContent = {
   coverage: {
     heading: CopyBlock;
     items: CoverageItem[];
-  };
-  affiliates: {
-    heading: CopyBlock;
-    items: AffiliateItem[];
   };
   sponsorReasons: {
     heading: CopyBlock;
@@ -217,42 +204,6 @@ const enContent: LocaleContent = {
         name: "Brasileirao",
         tag: "South America",
         blurb: "Context-rich coverage of Brazilian football as part of the brand's broader bilingual identity."
-      }
-    ]
-  },
-  affiliates: {
-    heading: {
-      eyebrow: "Monetization by audience",
-      title: "Separate affiliate space for the English football audience.",
-      description:
-        "Campaigns, banners, and offers can stay specific to this audience without mixing language, region, or sponsor relevance."
-    },
-    items: [
-      {
-        title: "Matchday offer",
-        description: "Use this banner slot for an English-facing affiliate campaign tied to fixtures, picks, or weekly football traffic.",
-        href: "#",
-        cta: "Add affiliate link",
-        tag: "Banner 01",
-        format: "feature",
-        imageSrc: "/fake-banner-en.png",
-        imageAlt: "English placeholder sponsor banner"
-      },
-      {
-        title: "Evergreen football deal",
-        description: "A persistent placement for betting, fantasy, apparel, or tool offers aimed at the international audience.",
-        href: "#",
-        cta: "Set destination",
-        tag: "Banner 02",
-        format: "sidebar"
-      },
-      {
-        title: "Partner campaign slot",
-        description: "A cleaner commercial surface for brand-safe affiliate or co-promo campaigns without crowding the homepage.",
-        href: "#",
-        cta: "Update banner",
-        tag: "Banner 03",
-        format: "sidebar"
       }
     ]
   },
@@ -484,44 +435,6 @@ const ptContent: LocaleContent = {
         tag: "Global",
         blurb: "Cobertura especial para o maior palco do futebol, conectando selecoes, grupos e mata-mata.",
         features: ["Grupos e classificacao", "Mata-mata", "Artilheiros", "Ultima rodada", "Palpites"]
-      }
-    ]
-  },
-  affiliates: {
-    heading: {
-      eyebrow: "Monetizacao segmentada",
-      title: "Espaco comercial separado para o publico em portugues.",
-      description:
-        "Links afiliados, banners e campanhas ficam adaptados ao idioma, regiao e perfil desse publico sem conflito com a operacao em ingles."
-    },
-    items: [
-      {
-        title: "Oferta da rodada",
-        description: "Use este espaco para uma campanha afiliada em portugues ligada a rodada, palpites ou calendario do momento.",
-        href: "https://s.afilio.com.br/?id=6a163216a7bd2a0001996fce",
-        cta: "Abrir oferta",
-        tag: "Banner 01",
-        format: "feature",
-        imageSrc: "https://s.afilio.com.br/?id=6a163216a7bd2a0001996fcf",
-        imageAlt: "Banner afiliado em portugues"
-      },
-      {
-        title: "Oferta evergreen de futebol",
-        description: "Um banner fixo para apostas, fantasy, camisa, app ou qualquer oferta com aderencia ao publico do canal.",
-        href: "https://s.afilio.com.br/?id=6a1638dbf7aeb20001e8bf82",
-        cta: "Abrir oferta",
-        tag: "Banner 02",
-        format: "sidebar",
-        imageSrc: "https://s.afilio.com.br/?id=6a1638dbf7aeb20001e8bf83",
-        imageAlt: "Banner lateral afiliado em portugues"
-      },
-      {
-        title: "Campanha de parceiro",
-        description: "Um bloco comercial mais limpo para divulgacao afiliada ou co-promocao sem poluir o resto da home.",
-        href: "#",
-        cta: "Atualizar banner",
-        tag: "Banner 03",
-        format: "sidebar"
       }
     ]
   },

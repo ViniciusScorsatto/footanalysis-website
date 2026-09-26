@@ -22,6 +22,7 @@ export function SiteHeader({ content, switchHref }: SiteHeaderProps) {
                 src="/footanalysis-logo.png"
                 alt="Foot Analysis logo"
                 fill
+                sizes="64px"
                 className="object-contain p-1.5 md:p-2"
                 priority
               />
