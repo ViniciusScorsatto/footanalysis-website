@@ -124,7 +124,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
                 </div>
                 <div className="px-2 py-2 lg:px-4">
                   <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#d7ff64]">Espaço para parceiros</p>
-                  <h2 className="mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl">Sua marca de roupas pode aparecer aqui.</h2>
+                  <h2 className="mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl">Sua marca pode aparecer aqui.</h2>
                   <p className="mt-4 text-sm leading-7 text-white/60">Fale com a FootAnalysis para criar uma parceria com o público que vive futebol.</p>
                   <TrackedSponsorLink
                     href="mailto:footanalysisshorts@gmail.com"
