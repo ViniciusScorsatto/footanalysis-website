@@ -175,6 +175,7 @@ export function HomeHero({
                     >
                       <Link
                         href={social.href}
+                        aria-label={social.label}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 bg-white/5 text-white/88 transition hover:border-white/30 hover:bg-white/10"

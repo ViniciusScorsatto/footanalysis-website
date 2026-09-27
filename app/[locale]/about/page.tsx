@@ -5,7 +5,7 @@ import { Container } from "@/components/container";
 import { FeatureGrid } from "@/components/feature-grid";
 import { SectionHeading } from "@/components/section-heading";
 import { getLocaleContent, isLocale } from "@/lib/site-content";
-import { getSiteUrl } from "@/lib/site-url";
+import { pageMetadata } from "@/lib/seo";
 
 type AboutPageProps = {
   params: Promise<{ locale: string }>;
@@ -19,40 +19,10 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
   }
 
   const content = getLocaleContent(locale);
-  const siteUrl = getSiteUrl();
-  const canonicalUrl = `${siteUrl}/${locale}/about`;
   const title =
-    locale === "en" ? "About FootAnalysis | Football Media Brand" : "Sobre a FootAnalysis | Midia de Futebol";
+    locale === "en" ? "About FootAnalysis | Football Analysis and Media" : "Sobre a FootAnalysis | Análises e mídia de futebol";
   const description = content.about.hero.description;
-  const ogImage = locale === "pt" ? `${siteUrl}/hero-bg-brazil.png` : `${siteUrl}/hero-bg-international.png`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: `${siteUrl}/en/about`,
-        pt: `${siteUrl}/pt/about`,
-        "x-default": `${siteUrl}/pt/about`
-      }
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "FootAnalysis",
-      type: "article",
-      images: [
-        {
-          url: ogImage,
-          width: 1980,
-          height: 1024,
-          alt: title
-        }
-      ]
-    }
-  };
+  return pageMetadata(locale, "/about", title, description);
 }
 
 export default async function AboutPage({ params }: AboutPageProps) {
@@ -69,7 +39,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
       <Container className="space-y-8">
         <div className="grid gap-8 rounded-[2.75rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] p-6 md:p-8 xl:grid-cols-[1.08fr_0.92fr] xl:p-10">
           <div className="space-y-8">
-            <SectionHeading {...content.about.hero} />
+            <SectionHeading {...content.about.hero} as="h1" />
             <div className="space-y-7 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
               {content.about.story.map((paragraph) => (
                 <p key={paragraph} className="text-lg leading-8 text-white/72">

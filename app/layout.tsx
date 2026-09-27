@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { headers } from "next/headers";
 
 import { getSiteOrigin } from "@/lib/site-url";
+import { brandStructuredData, serializeStructuredData } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -22,7 +23,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <html lang={htmlLang}>
-      <body>{children}</body>
+      <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeStructuredData(brandStructuredData()) }} />
+        {children}
+      </body>
     </html>
   );
 }

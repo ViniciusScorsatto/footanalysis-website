@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 
 type LanguageSwitchLinkProps = {
@@ -12,10 +13,13 @@ type LanguageSwitchLinkProps = {
 
 export function LanguageSwitchLink({ href, label, fromLocale, className }: LanguageSwitchLinkProps) {
   const toLocale = fromLocale === "en" ? "pt" : "en";
+  const pathname = usePathname();
+  const destination = pathname === `/${fromLocale}/about` ? `/${toLocale}/about` : href;
 
   return (
     <Link
-      href={href}
+      href={destination}
+      hrefLang={toLocale}
       className={className}
       onClick={() => {
         posthog.capture("language_switched", {

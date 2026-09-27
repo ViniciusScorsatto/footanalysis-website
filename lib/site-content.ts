@@ -115,9 +115,9 @@ const enContent: LocaleContent = {
   locale: "en",
   languageName: "English",
   metadata: {
-    title: "FootAnalysis | Football Media for Fans and Brands",
+    title: "FootAnalysis | Football Analysis and Statistics",
     description:
-      "FootAnalysis is a bilingual football media brand delivering premium analysis, creator-led storytelling, and sponsor-ready audience reach."
+      "Explore football analysis, league standings and team comparisons with FootAnalysis. Discover our videos and opportunities for brand partnerships."
   },
   nav: {
     home: "Home",
@@ -234,7 +234,7 @@ const enContent: LocaleContent = {
       eyebrow: "About the brand",
       title: "FootAnalysis turns football knowledge into compelling media.",
       description:
-        "The project was built to treat football content with structure, taste, and analysis-first credibility."
+        "Meet FootAnalysis, a bilingual football media brand sharing analysis, statistics and team comparisons through videos in English and Portuguese."
     },
     story: [
       "FootAnalysis was created around the idea that football content can be both accessible and intelligent. The brand focuses on making tactical, cultural, and narrative angles feel clear without losing depth.",
@@ -318,9 +318,9 @@ const ptContent: LocaleContent = {
   locale: "pt",
   languageName: "Português",
   metadata: {
-    title: "FootAnalysis | Midia de Futebol para Publico e Marcas",
+    title: "FootAnalysis | Análises e estatísticas de futebol",
     description:
-      "FootAnalysis e uma marca bilingue de midia de futebol com analise, narrativa premium e espaco profissional para patrocinadores."
+      "Análises de futebol, classificações e comparativos dos campeonatos com a FootAnalysis. Conheça nossos vídeos e oportunidades de parceria para marcas."
   },
   nav: {
     home: "Inicio",
@@ -463,9 +463,9 @@ const ptContent: LocaleContent = {
   about: {
     hero: {
       eyebrow: "Sobre a marca",
-      title: "A FootAnalysis transforma conhecimento de futebol em uma experiencia de midia.",
+      title: "A FootAnalysis transforma conhecimento de futebol em uma experiência de mídia.",
       description:
-        "O projeto nasceu para tratar conteudo de futebol com estrutura, gosto e credibilidade analitica."
+        "Conheça a FootAnalysis, uma marca bilíngue de futebol que compartilha análises, estatísticas e comparativos em vídeos em português e inglês."
     },
     story: [
       "A FootAnalysis foi criada com a ideia de que conteudo de futebol pode ser acessivel sem perder inteligencia. A marca busca tornar mais claros os angulos taticos, culturais e narrativos do jogo.",

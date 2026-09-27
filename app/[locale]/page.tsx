@@ -43,9 +43,9 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         coverageDescription:
           "Tabelas, ritmo de campeao, classificacoes, wrap-ups, comparativos e leituras rapidas dos campeonatos que mais movimentam o publico.",
         heroDescription:
-          "Conteudo curto de futebol com identidade visual forte, leitura rapida e formatos que fazem o torcedor parar para assistir.",
+          "Análises de futebol, classificações e comparativos dos campeonatos em vídeos curtos para quem acompanha cada rodada.",
         heroPrimary: "Seja um patrocinador",
-        heroTitle: "Futebol.\nAnalise.\nEntretenimento.\nGrande audiencia.",
+        heroTitle: "Futebol.\nAnálise.\nEntretenimento.\nGrande audiência.",
         sampleTitle: "Exemplos do visual do canal",
         sampleEyebrow: "Preview do conteudo"
       }
@@ -54,7 +54,7 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
         coverageDescription:
           "Tables, title pace, standings, season wrap-ups, comparisons, and fast football breakdowns built for short-form attention.",
         heroDescription:
-          "Short football content with strong visual identity, fast analysis, and repeatable formats designed to stop the scroll.",
+          "Football analysis, league standings and team comparisons in short videos for fans following every matchday.",
         heroPrimary: "Become a sponsor",
         heroTitle: "Football.\nAnalysis.\nEntertainment.\nGreat audience.",
         sampleTitle: "Examples of the channel style",
